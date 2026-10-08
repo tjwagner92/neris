@@ -17,7 +17,7 @@ python3 -m pip install -r requirements.txt --upgrade
 
 ### Get dataset 
 - Use https://neris.fsri.org/public for your specific county and date range (current dataset was Carroll County YTD to 8/2/2026)
-- rename the .csv file neris.csv so it will work in exploration notebook
+- rename the .csv file neris.csv so it will work in exploration notebook, then place in data folder
 
 ### Explore the dataset w/ Jupyter
 ```bash
