@@ -1,0 +1,194 @@
+NERIS Data Export
+=================
+
+
+Files
+=================
+
+[incidents.parquet]
+Type: Parquet
+
+
+The base incident-level model for the incident basics' incidents layer.
+
+
+Field Name                 | Alias                      | Definition
+---------------------------+----------------------------+---------------------------------------------------
+neris_id_incident          | Incident NERIS ID          | The unique identifier in NERIS for the incident.
+neris_id_dept              | Department NERIS ID        | The unique identifier for the agency in NERIS.
+department_name            | Department Name            | The name of the department.
+department_state           | Department State           | The state where the department's primary headquarters is located.
+type_1                     | Type 1                     | The disposition or final incident type as assessed on scene. Medical incident types have been generalized.
+type_1_primary             | Type 1 Primary             | Whether type_1 was the condition that best defines the overall incident.
+type_2                     | Type 2                     | The disposition or final incident type as assessed on scene. Medical incident types have been generalized.
+type_3                     | Type 3                     | The disposition or final incident type as assessed on scene. Medical incident types have been generalized.
+special_modifiers          | Special Modifiers          | Incident modifier(s) that can help describe the magnitude or category of the incident.
+aid_direction              | Aid Direction              | Whether aid was given or received by the department for the incident.
+nonfd_aid                  | NonFD Aid                  | Comma-separated list of types of non-fire department support agencies from which aid was received.
+unit_response_count        | Unit Response Count        | The number of units dispatched to the incident. Values over 1,000,000 are removed.
+rescue_animal              | Rescue Animal              | The number of animals rescued. Values over 1,000,000 are removed.
+call_create                | Call Create                | The timestamp when the call was created and call processing began in the Public Safety Answering Point (PSAP) or dispatch center.
+duration                   | Duration                   | The time in seconds between call_create and when dispatch closed the incident. Values over 1,000,000 are removed.
+civic_location             | Civic Location             | A concatenation of the elements of the incident's civic location. Generally an address or intersection.
+incident_state             | Incident State             | The state where the incident occurred.
+incident_county            | Incident County            | The county where the incident occurred.
+type_location_use          | Location Use               | The primary use type of the location.
+in_use                     | In Use                     | Whether the location was in use.
+intended                   | Intended Use               | Whether the location was being used as intended.
+type_vacancy               | Vacancy Type               | If not in use, apparent reason the location was not in use.
+type_location_use__second  | Secondary Location Use     | Secondary location use type, if there was one that impacted the incident response.
+acres_burned               | Acres Burned               | Estimated number of acres burned during the incident. Values over 100,000,000 are removed.
+room_of_origin             | Room of Origin             | Room of origin of the fire.
+building_damage            | Building Damage            | Rating of damage to the fire building of origin.
+action_and_tactics         | Actions and Tactics        | The actions and/or tactics taken by the department at the scene of the incident. Medical actions and tactics have been generalized.
+exposure_count             | Exposure Count             | The number of structures, vehicles, and other property affected by the incident that were not the primary incident location. Values over 1,000,000 are removed.
+displacement_count         | Displacement Count         | The number of people and businesses displaced due to the incident. Values over 1,000,000 are removed.
+displacement_causes        | Displacement Causes        | The cause of displacement for the incident.
+smoke_alarm_present        | Smoke Alarm Present        | Whether a smoke alarm was present at the incident location.
+smoke_alarm_types          | Smoke Alarm Types          | The types of smoke alarms present at the incident location.
+smoke_alarm_operation      | Smoke Alarm Operation      | The determination of if and how the alarm operated during the incident.
+fire_suppression_present   | Fire Suppression Present   | Whether there was a fire suppression system (e.g., sprinkler system) present at the incident location.
+fire_suppression_types     | Fire Suppression Types     | The types of fire suppression systems present at the incident location.
+fire_suppression_operation | Fire Suppression Operation | The determination of whether the fire suppression system operated as designed, intended, or expected.
+csst_hazard_flag           | CSST Hazard Flag           | Whether CSST was identified as the ignition source in the incident.
+electric_hazard_flag       | Electric Hazard Flag       | Whether one or more electric hazards were identified as part of the incident.
+powergen_hazard_flag       | Powergen Hazard Flag       | Whether there was a power generation hazard at the incident location.
+medical_oxygen_hazard_flag | Medical Oxygen Hazard Flag | Whether there was a medical oxygen present at the incident location.
+point_origin               | Point Origin               | Where the point associated with the incident came from in the incident data structure.
+x                          | x                          | The x-coordinate of the point associated with the incident.
+y                          | y                          | The y-coordinate of the point associated with the incident.
+export_date                | Export Date                | The date and time when the incident record was exported from the NERIS system.
+
+
+
+
+Terms of Use
+=================
+Effective Date:  August 2026 
+
+    Governing Terms: 
+    These dataset-specific terms operate in addition to, and never in
+    place of, the full NERIS Terms of Use available at:
+    
+        https://neris.fsri.org/terms-of-use
+
+    If any conflict arises, the full NERIS Terms of Use control.
+
+1. Purpose and Scope
+
+    This dataset is derived from the National Emergency Response
+    Information System (NERIS). The fire departments themselves are the owners
+    of their own data. UL Research Institutes’ Fire Safety Research Institute
+    maintains and publishes this dataset as the federal contract performer
+    supporting USFA.
+
+    The dataset is provided for public benefit, including emergency-planning
+    activities, public-safety analysis, research, and community information
+    uses.
+
+    Use of this dataset does not grant broader rights to access, use, or
+    modify the NERIS platform or services governed by the full NERIS Terms of Use.
+
+2. Acceptable Use
+
+    Users may access and use this dataset for:
+
+    Emergency management and public safety planning
+    Research and statistical analysis
+    Educational and training purposes
+    Community-risk assessment and resource planning
+    Integration into GIS platforms for authorized purposes
+    Development of maps, applications, and visualizations for public benefit
+
+    Use of this dataset may not be represented or implied as endorsement by USFA,
+    DHS, FEMA, UL Research Institutes' Fire Safety Research Institute, or any
+    other federal entity.
+
+Use of the dataset remains subject to the NERIS Terms of Use, including
+all restrictions on automated access, misuse, and prohibited conduct.
+
+3. Updates and Revisions
+
+        The dataset is updated as participating fire departments submit
+        verified changes through NERIS.
+
+        Update frequency is not guaranteed. Publication is intended to be
+        daily but may vary without notice.
+
+        The most recent update timestamp appears within the dataset attribute
+        tables.
+
+        UL Research Institutes' Fire Safety Research Institute and USFA may
+        modify the dataset structure, fields, content, or publication schedule
+        at any time.
+
+        No rights are granted to receive updates on any defined cadence.
+
+4. Privacy and Security
+
+        Users may not attempt to infer, derive, or reconstruct confidential or
+        restricted information from the dataset.
+
+        Users remain bound by all applicable privacy and security provisions
+        of the NERIS Terms of Use.
+
+5. Disclaimers and Limitations
+
+No Warranty
+
+The dataset is provided “as is” and “as available.”
+
+    UL Research Institutes' Fire Safety Research Institute, and USFA make no
+    representations or warranties—express or implied—regarding:
+
+    accuracy, completeness, or reliability
+    suitability for any particular purpose
+    continuous or error-free availability
+    
+        the quality or performance of any downstream products, analyses,
+        or services using this dataset.
+
+No Liability
+
+    To the maximum extent permitted by law, UL Research Institutes' Fire
+    Safety Research Institute, USFA, and their employees, contractors, and
+    affiliates shall not be liable for any direct, indirect, incidental,
+    consequential, special, exemplary, or punitive damages arising from or
+    related to:
+
+    use of or reliance on this dataset
+    errors, omissions, or inaccuracies
+    delays, interruptions, or failures in data availability
+    downstream analyses, products, decisions, or operational outcomes influenced by the dataset
+
+No Duty to Update
+
+    UL Research Institutes' Fire Safety Research Institute and USFA assume no
+    legal duty to:
+
+    update the dataset on any specific schedule
+    correct errors
+    support downstream uses
+    ensure compatibility with third-party tools or systems
+
+User Responsibility
+
+    Users bear all responsibility for:
+
+    validating accuracy
+    determining fitness for purpose
+    ensuring compliance with applicable laws, regulations, and local operational requirements
+
+6. Relationship to the Full NERIS Terms of Use
+
+    Accessing or using this dataset constitutes agreement to both:
+    
+        these dataset-specific terms, and 
+        the full NERIS Terms of Use at:
+            
+                https://neris.fsri.org/terms-of-use
+
+Where inconsistencies exist, the full NERIS Terms of Use govern.
+
+    Use of the dataset does not modify, expand, or waive any
+    obligations under the full NERIS Terms.
