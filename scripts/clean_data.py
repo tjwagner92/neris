@@ -5,7 +5,7 @@
 import pandas as pd
 
 #Data loading/check
-data = pd.read_csv('data/neris_FD24013403_2026-08-02.csv')
+data = pd.read_csv('data/neris.csv')
 data.info()
 
 #Changing the call_create to datetime
